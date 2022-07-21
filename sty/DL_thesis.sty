@@ -270,7 +270,7 @@
   \advance\leftmargin\labelsep
   \usecounter{enumi}}
  \def\newblock{\hskip .11em plus .33em minus .07em}
- \sloppy\clubpenalty4000\widowpenalty4000
+ \sloppy\clubpenalty10000\widowpenalty10000
  \sfcode`\.=1000\relax
  \setlength\itemindent{-20pt}}
 
@@ -372,15 +372,17 @@
 
 \def\Null{ }
 
-\newcommand{\ThesisTitle}[3]{%
+\newcommand{\ThesisTitle}[4]{%
  \newcommand{\dtitleA}{#1}%
  \newcommand{\dtitleB}{#2}%
  \newcommand{\dtitleC}{#3}%
+ \newcommand{\dtitleD}{#4}%
  \newcommand{\udtitle}{%
   \begin{center}
    \if\dtitleA\Null \else\uppercase{#1} \\ \fi
    \if\dtitleB\Null \else\uppercase{#2} \\ \fi
-   \if\dtitleC\Null \else\uppercase{#3} \fi
+   \if\dtitleC\Null \else\uppercase{#3} \\ \fi
+   \if\dtitleD\Null \else\uppercase{#4} \fi
   \end{center}%
  }%
 }
@@ -567,7 +569,10 @@
  \if\dtitleB\Null \else $\underline{\hbox{\dtitleB} _{\ }}$ \fi
  \vskip -0.23in
  \noindent
- \if\dtitleC\Null \else $\underline{\hbox{\dtitleC}} _{\ }$ \fi
+ \if\dtitleC\Null \else $\underline{\hbox{\dtitleC} _{\ }}$ \fi
+ \vskip -0.23in
+ \noindent
+ \if\dtitleD\Null \else $\underline{\hbox{\dtitleD}} _{\ }$ \fi
  \vskip -0.20in
  \noindent
  \vspace{-0.009in}
